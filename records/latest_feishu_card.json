@@ -1,0 +1,18 @@
+{
+  "msg_type": "interactive",
+  "card": {
+    "header": {
+      "template": "blue",
+      "title": {
+        "tag": "plain_text",
+        "content": "🤖 Agent 自动修复通知"
+      }
+    },
+    "elements": [
+      {
+        "tag": "markdown",
+        "content": "我发现了一个 Bug 并已为您修复，请 Review。\n- Bug: ZeroDivisionError when count == 0 in compute_ratio\n- PR: fix(agent): auto-fix ZeroDivisionError when count == 0 in compute_ratio"
+      }
+    ]
+  }
+}

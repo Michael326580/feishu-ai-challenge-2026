@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-04-28T00:00:00+00:00",
+  "plan": {
+    "bug_summary": "ZeroDivisionError when count == 0 in compute_ratio",
+    "target_file": "app/buggy_service.py",
+    "old_snippet": "return total / count",
+    "new_snippet": "return 0.0 if count == 0 else total / count",
+    "test_focus": "count=0 should return 0.0"
+  },
+  "commit_sha": "SIMULATED_SHA",
+  "pr": {
+    "title": "fix(agent): auto-fix ZeroDivisionError when count == 0 in compute_ratio",
+    "body": "## What\nAgent auto-fixed bug: ZeroDivisionError when count == 0 in compute_ratio.\n\n## Why\nDetected from traceback and mapped by analyzer rule.\n\n## Validation\n- python -m unittest discover -s tests -v\n"
+  },
+  "test_output": "test_analyze_zero_division_bug (tests.test_analyzer.AnalyzerTest.test_analyze_zero_division_bug) ... ok\n"
+}
