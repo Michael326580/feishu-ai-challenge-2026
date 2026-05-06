@@ -22,4 +22,4 @@ def compute_average(request: StatsRequest) -> float:
     BUG for demo: count == 0 raises ZeroDivisionError. The Agent should patch
     this line to return 0.0 when count is zero.
     """
-    return request.total / request.count
+    return 0.0 if request.count == 0 else request.total / request.count
