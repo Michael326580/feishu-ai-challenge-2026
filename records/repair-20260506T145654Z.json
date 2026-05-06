@@ -1,0 +1,26 @@
+{
+  "timestamp": "2026-05-06T14:56:54.462214+00:00",
+  "log_path": "logs/service_error.log",
+  "plan": {
+    "bug_summary": "ZeroDivisionError when count == 0 in compute_average",
+    "target_file": "app/web_service.py",
+    "old_snippet": "return request.total / request.count",
+    "new_snippet": "return 0.0 if request.count == 0 else request.total / request.count",
+    "test_focus": "count=0 should return 0.0",
+    "confidence": 0.98
+  },
+  "branch": "agent-fix/20260506-145654",
+  "commit_sha": "b145911252e50ef449a7b62f50a20080647df2dc",
+  "pr": {
+    "title": "fix(agent): auto-fix ZeroDivisionError when count == 0 in compute_average",
+    "body": "## What\nAgent auto-fixed bug: ZeroDivisionError when count == 0 in compute_average.\n\n## Root Cause\nThe traceback was analyzed and mapped to a minimal code patch.\n\n## Validation\n- python -m unittest discover -s tests -v\n",
+    "result": "records/latest_pr_preview.md",
+    "message": "gh not found; wrote PR preview"
+  },
+  "notification": {
+    "ok": true,
+    "data": "records/latest_feishu_card.json",
+    "message": "webhook not configured; wrote preview"
+  },
+  "test_output": "test_analyze_zero_division_bug (test_analyzer.AnalyzerTest.test_analyze_zero_division_bug) ... ok\ntest_compute_average_normal (test_service.ServiceTest.test_compute_average_normal) ... ok\ntest_compute_average_zero (test_service.ServiceTest.test_compute_average_zero) ... ok\n\n----------------------------------------------------------------------\nRan 3 tests in 0.001s\n\nOK\n"
+}

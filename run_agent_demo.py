@@ -1,3 +1,5 @@
+"""Run the complete local Agent demo."""
+
 from pathlib import Path
 
 from agent.auto_repair_agent import AutoRepairAgent
